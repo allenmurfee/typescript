@@ -80,9 +80,29 @@ console.log(mySizeConst);
 
 //annotate function with colon after parameters to determine return type
 //use : void if not going to return a value
-function calculateTax(income: number): number {
-  if (income < 50_000) {
+function calculateTax
+//taxYear? means taxYear doesn't need to be provided to the function
+(income: number, taxYear?: number): number {
+  // let x;
+  if ((taxYear || 2023) < 2023) {
     return income * 1.2;
     //JS returns undefined unless there's another return, and undefined isn't a number, which is return type in this function
+  } else {
+    return income * 1.3;
   }
 }
+
+//To call above function, have to supply exactly 2 arguments since those are the ones defined with return types
+calculateTax(20_000, 2023)
+
+function calculateTaxTwo
+//taxYear is 2023 if not provided when calling function. Also, TS infers taxYear is a number
+(income: number, taxYear = 2023): number {
+  if (taxYear < 2023) {
+    return income * 1.2;
+  } else {
+    return income * 1.3;
+  }
+}
+
+calculateTaxTwo(20_000)
