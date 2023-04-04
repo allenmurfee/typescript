@@ -19,9 +19,9 @@ let isPublished: boolean = true;
 let level;
 
 //This will throw error
-function render(document) {
-  console.log(document);
-}
+// function render(document) {
+//   console.log(document);
+// }
 
 //Declared as any
 function renderTwo(document: any) {
@@ -33,4 +33,45 @@ let numbers: number[] = [1, 2, 3];
 let numberArr: number[] = [];
 numberArr[0] = 1;
 //When doing "num." it will auto fill all number methods because TypeScript knows that "num" is a number.
-numberArr.forEach (num => num.toString())
+numberArr.forEach((num) => num.toString());
+
+//Tuples
+//Fixed length array with particular type
+//Try to keep tuples short. Key value pairs
+
+//When compiled, this will be regular array in JS code
+let user: [number, string] = [1, "Allen"];
+
+//The push method is troublesome because it lets you store another value even though it isn't strictly declared with a type
+
+user.push(2);
+
+//Enums
+//List of related constants
+
+//PascalCase
+enum Size {
+  // Will default Small = 0, Medium = 1, etc.
+  //To overwrite, can do: Small = "s", etc.
+  Small,
+  Medium,
+  Large,
+}
+
+let mySize: Size = Size.Medium;
+
+//This will log "1"
+console.log(mySize)
+
+//Declaring enum as const will make JS code more optimized and easy to understand
+const enum SizeConst {
+    // Will default Small = 0, Medium = 1, etc.
+    //To overwrite, can do: Small = "s", etc.
+    Small,
+    Medium,
+    Large,
+  }
+
+  let mySizeConst: SizeConst = SizeConst.Medium;
+
+  console.log(mySizeConst)
