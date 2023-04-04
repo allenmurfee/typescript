@@ -80,9 +80,11 @@ console.log(mySizeConst);
 
 //annotate function with colon after parameters to determine return type
 //use : void if not going to return a value
-function calculateTax
-//taxYear? means taxYear doesn't need to be provided to the function
-(income: number, taxYear?: number): number {
+function calculateTax(
+  //taxYear? means taxYear doesn't need to be provided to the function
+  income: number,
+  taxYear?: number
+): number {
   // let x;
   if ((taxYear || 2023) < 2023) {
     return income * 1.2;
@@ -93,11 +95,13 @@ function calculateTax
 }
 
 //To call above function, have to supply exactly 2 arguments since those are the ones defined with return types
-calculateTax(20_000, 2023)
+calculateTax(20_000, 2023);
 
-function calculateTaxTwo
-//taxYear is 2023 if not provided when calling function. Also, TS infers taxYear is a number
-(income: number, taxYear = 2023): number {
+function calculateTaxTwo(
+  //taxYear is 2023 if not provided when calling function. Also, TS infers taxYear is a number
+  income: number,
+  taxYear = 2023
+): number {
   if (taxYear < 2023) {
     return income * 1.2;
   } else {
@@ -105,4 +109,30 @@ function calculateTaxTwo
   }
 }
 
-calculateTaxTwo(20_000)
+calculateTaxTwo(20_000);
+
+//Objects
+
+let employee: {
+  //readonly makes it so we can't redefine id
+  readonly id: number;
+  name: string,
+  //void means don't return any values
+  retire: (date: Date) => void
+} = {
+  id: 1,
+  name: "Allen",
+  retire: (date: Date) => {
+    console.log(date)
+  }
+};
+
+//OR
+
+//makes Name optional. however, conceptually, this doesn't make sense, as everyone has a name. But you can do this.
+let employeeTwo: {
+  id: number;
+  name?: string
+} = {
+  id: 2
+}
