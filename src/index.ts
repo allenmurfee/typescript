@@ -61,17 +61,28 @@ enum Size {
 let mySize: Size = Size.Medium;
 
 //This will log "1"
-console.log(mySize)
+console.log(mySize);
 
 //Declaring enum as const will make JS code more optimized and easy to understand
 const enum SizeConst {
-    // Will default Small = 0, Medium = 1, etc.
-    //To overwrite, can do: Small = "s", etc.
-    Small,
-    Medium,
-    Large,
+  // Will default Small = 0, Medium = 1, etc.
+  //To overwrite, can do: Small = "s", etc.
+  Small,
+  Medium,
+  Large,
+}
+
+let mySizeConst: SizeConst = SizeConst.Medium;
+
+console.log(mySizeConst);
+
+//Functions
+
+//annotate function with colon after parameters to determine return type
+//use : void if not going to return a value
+function calculateTax(income: number): number {
+  if (income < 50_000) {
+    return income * 1.2;
+    //JS returns undefined unless there's another return, and undefined isn't a number, which is return type in this function
   }
-
-  let mySizeConst: SizeConst = SizeConst.Medium;
-
-  console.log(mySizeConst)
+}
