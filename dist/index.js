@@ -28,4 +28,32 @@ let mySize = Size.Medium;
 console.log(mySize);
 let mySizeConst = 1;
 console.log(mySizeConst);
+function calculateTax(income, taxYear) {
+    if ((taxYear || 2023) < 2023) {
+        return income * 1.2;
+    }
+    else {
+        return income * 1.3;
+    }
+}
+calculateTax(20000, 2023);
+function calculateTaxTwo(income, taxYear = 2023) {
+    if (taxYear < 2023) {
+        return income * 1.2;
+    }
+    else {
+        return income * 1.3;
+    }
+}
+calculateTaxTwo(20000);
+let employee = {
+    id: 1,
+    name: "Allen",
+    retire: (date) => {
+        console.log(date);
+    }
+};
+let employeeTwo = {
+    id: 2
+};
 //# sourceMappingURL=index.js.map
