@@ -188,3 +188,19 @@ let textBox: UIWidget = {
 //Literal (exact, specific)
 type Quantity = 50 | 100;
 let quantity: Quantity = 100;
+
+type Metric = "cm" | "inch";
+let measurement: Metric = "inch";
+
+//Nullable Types
+
+function greet(name: string | null | undefined) {
+  if (name) console.log(name.toLocaleUpperCase());
+  else console.log("Hello");
+}
+
+//Can't do greet(null) unless option is turned off
+
+//Can do this because of union type in the function "greet"
+greet(null);
+greet(undefined);
