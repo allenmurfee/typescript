@@ -116,15 +116,15 @@ calculateTaxTwo(20_000);
 let employee: {
   //readonly makes it so we can't redefine id
   readonly id: number;
-  name: string,
+  name: string;
   //void means don't return any values
-  retire: (date: Date) => void
+  retire: (date: Date) => void;
 } = {
   id: 1,
   name: "Allen",
   retire: (date: Date) => {
-    console.log(date)
-  }
+    console.log(date);
+  },
 };
 
 //OR
@@ -132,7 +132,35 @@ let employee: {
 //makes Name optional. however, conceptually, this doesn't make sense, as everyone has a name. But you can do this.
 let employeeTwo: {
   id: number;
-  name?: string
+  name?: string;
 } = {
-  id: 2
+  id: 2,
+};
+
+//Type Aliases
+//Define custom type
+type Employee = {
+  readonly id: number;
+  name: string;
+  retire: (date: Date) => void;
+};
+
+let newEmployee: {} = {
+  id: 1,
+  name: "Allen",
+  retire: (date: Date) => {
+    console.log(date);
+  },
+};
+
+//Union Types
+//Using | syntax
+function kgToLbs(weight: number | string): number {
+  //Narrowing
+  //Does type checking on "weight"
+  if (typeof weight === "number") return weight * 2.2;
+  else return parseInt(weight) * 2.2;
 }
+
+kgToLbs(10);
+kgToLbs("10kg");

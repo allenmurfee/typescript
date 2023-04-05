@@ -51,9 +51,24 @@ let employee = {
     name: "Allen",
     retire: (date) => {
         console.log(date);
-    }
+    },
 };
 let employeeTwo = {
-    id: 2
+    id: 2,
 };
+let newEmployee = {
+    id: 1,
+    name: "Allen",
+    retire: (date) => {
+        console.log(date);
+    },
+};
+function kgToLbs(weight) {
+    if (typeof weight === "number")
+        return weight * 2.2;
+    else
+        return parseInt(weight) * 2.2;
+}
+kgToLbs(10);
+kgToLbs("10kg");
 //# sourceMappingURL=index.js.map
