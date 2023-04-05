@@ -222,9 +222,21 @@ let customerTwo = getCustomer(1);
 //   console.log(customer.birthday);
 // }
 
-//Use ? after customer. Then, this will only execute if "customer" exists
+//Use ? after customer. Then, will give back customer birthday, and if it doesn't exist, then undefined
 console.log(customer?.birthday);
 console.log(customerTwo?.birthday);
 
 //More chaining
 console.log("customer birthday", customerTwo?.birthday?.getFullYear());
+
+//Optional element access  operator
+//Useful with arrays
+let customers: string[] = ["Customer", "Customer Two"]
+customers?.[0]
+
+//Optional call
+// let log: any = (message: string) => console.log(message)
+let log: any = null
+
+//This will only get executed if referencing an actual function, if not, you get undefined
+log?.('a')
