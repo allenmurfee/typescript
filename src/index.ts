@@ -179,5 +179,12 @@ type UIWidget = Draggable & Resizeable;
 
 let textBox: UIWidget = {
   drag: () => {},
-  resize: () => {}
-}
+  resize: () => {},
+};
+
+//Literal Types
+//Limit types you can assign to variable
+
+//Literal (exact, specific)
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
