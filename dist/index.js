@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 console.log("Testing compiling");
 let age = 20;
 if (age < 50) {
@@ -71,4 +72,26 @@ function kgToLbs(weight) {
 }
 kgToLbs(10);
 kgToLbs("10kg");
+let textBox = {
+    drag: () => { },
+    resize: () => { },
+};
+let quantity = 100;
+let measurement = "inch";
+function greet(name) {
+    if (name)
+        console.log(name.toLocaleUpperCase());
+    else
+        console.log("Hello");
+}
+greet(null);
+greet(undefined);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(0);
+let customerTwo = getCustomer(1);
+console.log(customer === null || customer === void 0 ? void 0 : customer.birthday);
+console.log(customerTwo === null || customerTwo === void 0 ? void 0 : customerTwo.birthday);
+console.log("customer birthday", (_a = customerTwo === null || customerTwo === void 0 ? void 0 : customerTwo.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
 //# sourceMappingURL=index.js.map

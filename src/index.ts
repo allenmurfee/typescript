@@ -204,3 +204,27 @@ function greet(name: string | null | undefined) {
 //Can do this because of union type in the function "greet"
 greet(null);
 greet(undefined);
+
+//Optional Chaining
+type Customer = {
+  birthday: Date;
+};
+
+function getCustomer(id: number): Customer | null | undefined {
+  return id === 0 ? null : { birthday: new Date() };
+}
+
+let customer = getCustomer(0);
+let customerTwo = getCustomer(1);
+
+//There is a simpler way to do the below.
+// if (customer !== null && customer !== undefined) {
+//   console.log(customer.birthday);
+// }
+
+//Use ? after customer. Then, this will only execute if "customer" exists
+console.log(customer?.birthday);
+console.log(customerTwo?.birthday);
+
+//More chaining
+console.log("customer birthday", customerTwo?.birthday?.getFullYear());
